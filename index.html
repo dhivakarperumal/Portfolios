@@ -408,58 +408,68 @@
 
     <!--  ************************* Contact  Starts Here ************************** -->
 
-    <section id="cntact_us" class="contact-us-single">
-        <div class="container py-5">
-            <div class="session-title row">
-                <h2>Contact Me</h2>
-                <div class="heading-line"></div>
-            </div>
-            <div class="row no-margin">
-                <div class="col-sm-6 no-padding">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124420.83274529342!2d78.57042111406919!3d12.96218634528398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad9fd71e32e24d%3A0x28d936dfa698b045!2sNayakkaneri%20R.F.%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1720015826362!5m2!1sen!2sin"
-                        style="width:100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="contact_us" class="contact-us-section py-5">
+  <div class="container">
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Contact Me</h2>
+      <div class="heading-line mx-auto"></div>
+      <p class="text-muted mt-2">Feel free to reach out for collaborations or queries</p>
+    </div>
 
-                </div>
-                <div class="col-sm-6 cop-ck">
-                    <h2><b>Contact Form</b></h2>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="6a4d6d9c-c4a9-42f4-9b30-2001e41ae1f4">
-
-                        <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Enter Name :</label></div>
-                            <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name"
-                                    class="form-control input-sm"></div>
-                        </div>
-                        <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Email Address :</label></div>
-                            <div class="col-sm-8"><input type="email" name="email" placeholder="Enter Email Address"
-                                    class="form-control input-sm"></div>
-                        </div>
-                        <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Mobile No:</label></div>
-                            <div class="col-sm-8"><input type="text" name="mobile" placeholder="Enter Mobile Number"
-                                    class="form-control input-sm"></div>
-                        </div>
-                        <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Enter Message:</label></div>
-                            <div class="col-sm-8">
-                                <textarea rows="5" name="Ask Questions" placeholder="Enter Your Message"
-                                    class="form-control input-sm"></textarea>
-                            </div>
-                        </div>
-                        <div class="row cf-ro">
-                            <div class="col-sm-3"><label></label></div>
-                            <div class="col-sm-8">
-                                <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="row g-4">
+      <!-- Map -->
+      <div class="col-lg-6">
+        <div class="map-container rounded shadow-sm">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124420.83274529342!2d78.57042111406919!3d12.96218634528398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad9fd71e32e24d%3A0x28d936dfa698b045!2sNayakkaneri%20R.F.%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1720015826362!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
         </div>
-    </section>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-6">
+        <div class="card p-4 shadow-sm border-0">
+          <h3 class="fw-bold mb-3">Send a Message</h3>
+
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="6a4d6d9c-c4a9-42f4-9b30-2001e41ae1f4">
+
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Mobile Number</label>
+              <input type="text" name="mobile" class="form-control" placeholder="Enter your number">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Your Message</label>
+              <textarea class="form-control" rows="5" name="message" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!--  ************************* Footer  Starts Here ************************** -->
