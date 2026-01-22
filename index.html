@@ -5,97 +5,131 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Portfolio</title>
+    <title>Dhivakar P | Full Stack Developer</title>
     <link rel="shortcut icon" href="assets/images/download.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0" />
 
 </head>
 
 <body>
-    <!--########################### Header Starts Here ###################### -->
-    <div class="home-screen container-fluid">
-        <div class="home-cover">
-            <div id="menu-jk" class="header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 logo">
-                            <img class="logo-wt" src="assets/images/logo.png" alt="">
-                            <img class="logo-gry" src="assets/images/logo-gray.png" alt="">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
 
-                            <a data-toggle="collapse" data-target="#menu" href="#menu"><i
-                                    class="fas d-block d-md-none small-menu fa-bars"></i></a>
-                        </div>
-                        <div id="menu" class="col-md-9 d-none d-md-block">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#about_us">About Us</a></li>
-                                <li><a href="#services">Educations</a></li>
-                                <li><a href="#skills">Skills</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
-                                <li><a href="#cntact_us">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!--########################### Header Starts Here ###################### -->
+    <header id="menu-jk" class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-3 logo">
+                    <img class="logo-wt" src="assets/images/logo.png" alt="Logo">
+                    <img class="logo-gry" src="assets/images/logo-gray.png" alt="Logo">
+                </div>
+                <div class="col-6 d-md-none text-right">
+                    <a class="small-menu" data-toggle="collapse" data-target="#menu" href="#menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <div id="menu" class="col-md-9 collapse d-md-block">
+                    <ul>
+                        <li><a href="#home" class="nav-link-custom active">Home</a></li>
+                        <li><a href="#about_us" class="nav-link-custom">About</a></li>
+                        <li><a href="#services" class="nav-link-custom">Education</a></li>
+                        <li><a href="#skills" class="nav-link-custom">Skills</a></li>
+                        <li><a href="#portfolio" class="nav-link-custom">Portfolio</a></li>
+                        <li><a href="#contact_us" class="nav-link-custom">Contact</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <div id="home" class="home-screen container-fluid">
+        <div class="home-cover">
             <div class="container">
                 <div class="row home-detail">
-                    <div class="col-md-5  animated bounceInLeft hom-img">
-                        <img src="assets/images/old.jpg" alt="" style="border-radius: 80%; margin-top: 100px;">
+                    <div class="col-md-5 animated bounceInLeft hom-img">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/images/old.jpg" alt="Dhivakar P" class="profile-img">
+                            <div class="profile-ring"></div>
+                            <div class="profile-ring ring-2"></div>
+                        </div>
                     </div>
-                    <div class="col-md-7  animated bounceInRight homexp" style="margin-top: 0px !important;">
-                        <h5>Hello I'm</h5>
-                        <h2>DHIVAKAR P</h2>
-                        <span className="title">
-                            Professional <a href="#">React JS Full Stack & Frontend Developer</a>
+                    <div class="col-md-7 animated bounceInRight homexp">
+                        <h5 class="greeting">Hello I'm</h5>
+                        <h2 class="name-title">DHIVAKAR P</h2>
+                        <span class="title">
+                            Professional <a href="#" class="highlight-text typed-text"></a>
                         </span>
 
-                        <p className="description">
+                        <p class="description">
                             React JS Full Stack Developer with strong expertise in building modern,
                             responsive, and high-performance web applications. Skilled in creating
                             scalable front-end architectures using React, JavaScript, and related
                             frameworks, along with backend integration and API development.
                             Seeking a dynamic role to apply my skills in developing user-friendly,
-                            efficient, and impactful digital solutions. Passionate about staying updated
-                            with the latest web technologies and best practices to deliver innovative and
-                            high-quality results.
+                            efficient, and impactful digital solutions.
                         </p>
-
 
                         <ul class="socil-icon">
                             <li>
-                                <a href="https://github.com/dhivakarperumal"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/dhivakarperumal" class="social-btn" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/dhivakar3005200/"><i
-                                        class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/dhivakar3005200/" class="social-btn" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-btn">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-btn">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-btn">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
                             </li>
-
                         </ul>
-                        <br><br><br><br>
+
+                        <div class="hero-buttons">
+                            <a href="#contact_us" class="btn btn-primary btn-glow">Hire Me</a>
+                            <a href="assets/Resume/DHIVAKAR P.pdf" class="btn btn-outline-light" download>Download CV</a>
+                        </div>
                     </div>
-
-
                 </div>
 
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </div>
             </div>
         </div>
     </div>
@@ -104,29 +138,30 @@
 
     <div id="about_us" class="about-us container-fluid">
         <div class="container">
-            <div class="session-title row">
+            <div class="session-title" data-aos="fade-up">
                 <h2>About Me</h2>
                 <div class="heading-line"></div>
             </div>
             <div class="about-row row">
-                <div class="image-col col-md-4">
-                    <img src="assets/images/old.jpg" alt="">
-                    <button class="btn btn-primary"><i class="fas fa-download"></i><a
-                            style="margin-left: 10px; color: white !important;"
-                            href="assets/Resume/DHIVAKAR P.pdf"><b>Download CV</b></a></button>
+                <div class="image-col col-md-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="about-img-wrapper">
+                        <img src="assets/images/old.jpg" alt="Dhivakar P">
+                        <div class="about-img-overlay"></div>
+                    </div>
+                    <a class="btn btn-primary btn-download" href="assets/Resume/DHIVAKAR P.pdf" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
                 </div>
-                <div class="detail-col col-md-8">
-                    <div className="max-w-4xl mx-auto text-center p-8">
-                        <h2
-                            className="text-4xl font-extrabold bg-gradient-to-r from-indigo-500 to-purple-600 text-transparent bg-clip-text mb-3">
-                            Dhivakar P
-                        </h2>
+                <div class="detail-col col-md-8" data-aos="fade-left" data-aos-delay="200">
+                    <div class="about-content">
+                        <h2 class="gradient-text">Dhivakar P</h2>
 
-                        <h6 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-5">
+                        <h6 class="role-title">
                             React JS Full Stack Developer & Frontend Developer
                         </h6>
 
-                        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                        <p class="about-description">
                             Full Stack Developer skilled in HTML5, CSS3, JavaScript, Bootstrap, and
                             ReactJS for building responsive and user-friendly web interfaces.
                             Experienced in backend development with Python, MySQL, and Django.
@@ -135,26 +170,28 @@
                             contributing effectively across the full project lifecycle.
                         </p>
                     </div>
-                    <div class="row">
+                    <div class="row info-row">
                         <div class="col-md-6 col-12">
-                            <div class="info-list">
+                            <div class="info-list" data-aos="fade-up" data-aos-delay="300">
                                 <ul>
-                                    <li><span>Birthday:</span>30-05-2000</li>
-                                    <li><span>City:</span>Tirupathur</li>
-                                    <li><span>Study:</span>Anna University</li>
-                                    <li><span>WhatsApp:</span><a href=""><a
-                                                href="https://wa.me/+918940450960?text=Hello%20there!"
-                                                target="_blank">Chat with Us on WhatsApp</a></a></li>
+                                    <li><span class="info-label">Birthday:</span><span class="info-value">30-05-2000</span></li>
+                                    <li><span class="info-label">City:</span><span class="info-value">Tirupathur</span></li>
+                                    <li><span class="info-label">Study:</span><span class="info-value">Anna University</span></li>
+                                    <li><span class="info-label">WhatsApp:</span>
+                                        <a href="https://wa.me/+918940450960?text=Hello%20there!" target="_blank" class="whatsapp-link">
+                                            <i class="fab fa-whatsapp"></i> Chat with Me
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
-                            <div class="info-list">
+                            <div class="info-list" data-aos="fade-up" data-aos-delay="400">
                                 <ul>
-                                    <li><span>Age:</span>24 Years</li>
-                                    <li><span>Degree:</span>Master of Computer Applications (MCA)</li>
-                                    <li><span>Mail:</span>dhivakarp305gmail.com</li>
-                                    <li><span>Phone:</span>+91 8940450960</li>
+                                    <li><span class="info-label">Age:</span><span class="info-value">24 Years</span></li>
+                                    <li><span class="info-label">Degree:</span><span class="info-value">MCA</span></li>
+                                    <li><span class="info-label">Mail:</span><span class="info-value">dhivakarp305@gmail.com</span></li>
+                                    <li><span class="info-label">Phone:</span><span class="info-value">+91 8940450960</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -162,109 +199,113 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!--########################### Education & Expericence ###################### -->
+    <!--########################### Education & Experience ###################### -->
 
     <div id="services" class="services container-fluid">
         <div class="container">
-            <div class="session-title row">
-                <h2>Education & Expericence</h2>
+            <div class="session-title" data-aos="fade-up">
+                <h2>Education & Experience</h2>
                 <div class="heading-line"></div>
             </div>
             <div class="container-fluid py-2">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <h3 class="mb-4">My Education</h3>
-                            <div class="border-left border-primary pt-2 pl-4 ml-2">
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-                                    <h5 class="font-weight-bold mb-1">Master Degree In MCA</h5>
-                                    <p class="mb-2"><strong>Autonomous Institution Affiliated to Anna
-                                            University</strong> | <small>2021 - 2023</small></p>
-                                    <p>K.S.R College of Engineering (Autonomous), Tiruchongode</p>
-                                    <p class="mb-2"><strong>CGPA:</strong> <small>8.19</small></p>
+                    <div class="row align-items-start">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                            <h3 class="section-subtitle mb-4">
+                                <i class="fas fa-graduation-cap"></i> My Education
+                            </h3>
+                            <div class="timeline">
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">Master Degree In MCA</h5>
+                                        <p class="timeline-info">
+                                            <strong>K.S.R College of Engineering (Autonomous)</strong>
+                                        </p>
+                                        <span class="timeline-date">2021 - 2023</span>
+                                        <p class="timeline-location">Tiruchongode | Anna University</p>
+                                        <span class="timeline-badge">CGPA: 8.19</span>
+                                    </div>
                                 </div>
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-                                    <h5 class="font-weight-bold mb-1">Bachelor's Degree In B.Sc Mathematics</h5>
-                                    <p class="mb-2"><strong>Thiruvallur University</strong> | <small>2018 - 2021</small>
-                                    </p>
-                                    <p>Mazhurul Uloom College, Ambur</p>
-                                    <p class="mb-2"><strong>CGPA:</strong> <small>7.4</small></p>
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">Bachelor's Degree In B.Sc Mathematics</h5>
+                                        <p class="timeline-info">
+                                            <strong>Mazhurul Uloom College</strong>
+                                        </p>
+                                        <span class="timeline-date">2018 - 2021</span>
+                                        <p class="timeline-location">Ambur | Thiruvallur University</p>
+                                        <span class="timeline-badge">CGPA: 7.4</span>
+                                    </div>
                                 </div>
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-                                    <h5 class="font-weight-bold mb-1">HSC</h5>
-                                    <p class="mb-2"><strong>StateBoard</strong> | <small>2015 - 2017</small></p>
-                                    <p>Sri Venkateshwara HR Sec School,Vellore </p>
-                                    <p class="mb-2"><strong>CGPA:</strong> <small>6.3</small></p>
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="250">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">HSC</h5>
+                                        <p class="timeline-info">
+                                            <strong>Sri Venkateshwara HR Sec School</strong>
+                                        </p>
+                                        <span class="timeline-date">2015 - 2017</span>
+                                        <p class="timeline-location">Vellore | StateBoard</p>
+                                        <span class="timeline-badge">CGPA: 6.3</span>
+                                    </div>
                                 </div>
-
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-                                    <h5 class="font-weight-bold mb-1">SSLC</h5>
-                                    <p class="mb-2"><strong>StateBoard</strong> | <small>2015</small></p>
-                                    <p>Government High School,Nayakkaneri</p>
-                                    <p class="mb-2"><strong>CGPA:</strong> <small>8.0</small></p>
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">SSLC</h5>
+                                        <p class="timeline-info">
+                                            <strong>Government High School</strong>
+                                        </p>
+                                        <span class="timeline-date">2015</span>
+                                        <p class="timeline-location">Nayakkaneri | StateBoard</p>
+                                        <span class="timeline-badge">CGPA: 8.0</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <h3 class="mb-4">My Expericence</h3>
-                            <div class="border-left border-primary pl-4 pt-2 ml-2">
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-
-                                    <h5 class="font-weight-bold mb-1">FrontEnd Developer</h5>
-
-                                    <p class="mb-2">
-                                        <strong>Senchola Technology</strong> |
-                                        <small>August 2023 - 3 Months</small>
-                                    </p>
-
-                                    <p>
-                                        Coded using HTML, CSS, Bootstrap, JavaScript, and React to develop features for
-                                        mobile and desktop.
-                                        Built fully responsive and multi-browser compatible websites.
-                                    </p>
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                            <h3 class="section-subtitle mb-4">
+                                <i class="fas fa-briefcase"></i> My Experience
+                            </h3>
+                            <div class="timeline">
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+                                    <div class="timeline-dot active"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">Full Stack Developer</h5>
+                                        <p class="timeline-info">
+                                            <strong>QTechX Solutions</strong>
+                                        </p>
+                                        <span class="timeline-date current">August 2024 - Present</span>
+                                        <p class="timeline-description">
+                                            Working on modern web applications using React, Tailwind CSS,
+                                            JavaScript, Python, Django, and MySQL. Building scalable
+                                            frontend interfaces, optimizing backend performance, and
+                                            delivering responsive web platforms.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h5 class="timeline-title">Frontend Developer</h5>
+                                        <p class="timeline-info">
+                                            <strong>Senchola Technology</strong>
+                                        </p>
+                                        <span class="timeline-date">August 2023 - 3 Months</span>
+                                        <p class="timeline-description">
+                                            Developed features for mobile and desktop using HTML, CSS,
+                                            Bootstrap, JavaScript, and React. Built fully responsive
+                                            and multi-browser compatible websites.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-
-                            <div class="border-left border-primary pt-2 pl-4 ml-2">
-                                <div class="position-relative mb-4">
-                                    <i class="far fa-dot-circle text-primary position-absolute"
-                                        style="top: 2px; left: -32px;"></i>
-
-                                    <h5 class="font-weight-bold mb-1">Full Stack Developer</h5>
-
-                                    <p class="mb-2">
-                                        <strong>QTechX Solutions</strong> |
-                                        <small>August 2024 - Present</small>
-                                    </p>
-
-                                    <p>
-                                        Full Stack Developer working on modern web applications using React, Tailwind
-                                        CSS,
-                                        JavaScript, Python, Django, and MySQL. Responsible for building scalable
-                                        frontend
-                                        interfaces, optimizing backend performance, integrating APIs, and delivering
-                                        responsive and user-friendly web platforms.
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -273,85 +314,119 @@
 
     <!--########################### Skills Starts Here ###################### -->
 
-    <div id="skills" class="skills container-fluid ">
+    <div id="skills" class="skills container-fluid">
         <div class="container py-5">
-            <div class="session-title row">
+            <div class="session-title" data-aos="fade-up">
                 <h2>Skills</h2>
                 <div class="heading-line"></div>
             </div>
 
-            <div class="row" style="margin-top: -40px;">
-                <div class="col-md-6 skii-div tech-skill">
-                    <div class="title">
-                        <h2>Technical Skill</h2>
+            <div class="row skills-row">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="skills-card">
+                        <div class="skills-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-info">
+                                <span class="skill-name">CSS3 / SCSS</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-info">
+                                <span class="skill-name">React JS</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-info">
+                                <span class="skill-name">Bootstrap / Tailwind</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
                     </div>
-
-                    <ul>
-                        <li>
-                            <label for="">HTML5</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 95%"
-                                    aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">CSS3</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">JAVASCRIPT</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 55%"
-                                    aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">BOOTSTRAP</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 65%"
-                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-
-                    </ul>
                 </div>
-                <div class="col-md-6 skii-div tech-skill " style="margin-top: -5px;">
-                    <div class="title">
-                        <h2>Technical Skill</h2>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="skills-card">
+                        <div class="skills-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress backend" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-info">
+                                <span class="skill-name">Django</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress backend" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress backend" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-info">
+                                <span class="skill-name">REST APIs</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress backend" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-info">
+                                <span class="skill-name">Git / GitHub</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress backend" data-width="80"></div>
+                            </div>
+                        </div>
                     </div>
-                    <ul>
-                        <li>
-                            <label for="">REACT JS</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning progress-bar-striped" role="progressbar"
-                                    style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">PYTHON</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning progress-bar-striped" role="progressbar"
-                                    style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">DJANGO</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning progress-bar-striped" role="progressbar"
-                                    style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <label for="">MYSQL</label>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning progress-bar-striped" role="progressbar"
-                                    style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -360,144 +435,321 @@
     <!--  ************************* Gallery Starts Here ************************** -->
     <div id="portfolio" class="gallery">
         <div class="container py-3">
-            <div class="session-title row">
-                <h2>Portfolio</h2>
+            <div class="text-center mb-4" data-aos="fade-up">
+                <h2 class="section-heading">Portfolio</h2>
                 <div class="heading-line"></div>
+                <p class="text-muted">Check out some of my recent projects</p>
             </div>
-            <div class="row">
 
+            <!-- Filter Buttons -->
+            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
 
-                <!-- <div class="gallery-filter d-none d-sm-block">
-                    <button class="btn btn-default filter-button" data-filter="all">All</button>
-                    <button class="btn btn-default filter-button" data-filter="hdpe">Finance</button>
-                    <button class="btn btn-default filter-button" data-filter="sprinkle">Digital Marketing</button>
-                    <button class="btn btn-default filter-button" data-filter="spray"> Money</button>
-                    <button class="btn btn-default filter-button" data-filter="irrigation">Business Alaysis</button>
-                </div> -->
-                <br />
-
-
-                <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/11.png" class="img-responsive"></a>
+            <div class="row gallery-grid">
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter web" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/11.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Web Project</h4>
+                                <p>React Application</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/11.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/12.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ui" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/12.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>UI Design</h4>
+                                <p>Dashboard</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/12.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-
-
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-                    <a href=""><img src="assets/images/gallery/1.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter web" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/1.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>E-Commerce</h4>
+                                <p>Full Stack App</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/1.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
-                    <a href=""><img src="assets/images/gallery/2.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter mobile" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/2.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Mobile App</h4>
+                                <p>React Native</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/2.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-                    <a href=""><img src="assets/images/gallery/3.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter web" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/3.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Web Portal</h4>
+                                <p>Django Backend</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/3.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/4.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ui" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/4.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Landing Page</h4>
+                                <p>UI Design</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/4.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-                    <a href=""><img src="assets/images/gallery/5.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter mobile" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/5.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>App Design</h4>
+                                <p>Mobile UI</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/5.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-                    <a href=""><img src="assets/images/gallery/6.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter web" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/6.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Admin Panel</h4>
+                                <p>React Dashboard</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/6.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/7.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ui" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/7.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Portfolio</h4>
+                                <p>Personal Site</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/7.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/8.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter web" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/8.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Blog Platform</h4>
+                                <p>Full Stack</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/8.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/9.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter mobile" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/9.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Chat App</h4>
+                                <p>Real-time</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/9.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-                    <a href=""><img src="assets/images/gallery/10.png" class="img-responsive"></a>
+                <div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ui" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery/10.png" class="img-responsive" alt="Project">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>SaaS Platform</h4>
+                                <p>Web Application</p>
+                            </div>
+                            <div class="gallery-links">
+                                <a href="assets/images/gallery/10.png" class="gallery-lightbox"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
-
-
     </div>
     <!-- ######## Gallery End ####### -->
 
 
-    <!--  ************************* Contact  Starts Here ************************** -->
+    <!--  ************************* Contact Starts Here ************************** -->
 
     <section id="contact_us" class="contact-us-section py-5">
         <div class="container">
             <!-- Heading -->
-            <div class="text-center mb-5">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="fw-bold">Contact Me</h2>
                 <div class="heading-line mx-auto"></div>
-                <p class="text-muted mt-2">Feel free to reach out for collaborations or queries</p>
+                <p class="text-muted mt-3">Feel free to reach out for collaborations or queries</p>
             </div>
 
             <div class="row g-4">
-                <!-- Map -->
-                <div class="col-lg-6">
-                    <div class="map-container rounded shadow-sm">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124420.83274529342!2d78.57042111406919!3d12.96218634528398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad9fd71e32e24d%3A0x28d936dfa698b045!2sNayakkaneri%20R.F.%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1720015826362!5m2!1sen!2sin"
-                            width="100%" height="450" style="border:0;" allowfullscreen loading="lazy">
-                        </iframe>
+                <!-- Contact Info Cards -->
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="contact-info-wrapper">
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Location</h5>
+                                <p>Nayakkaneri, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <p>dhivakarp305@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Phone</h5>
+                                <p>+91 8940450960</p>
+                            </div>
+                        </div>
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>WhatsApp</h5>
+                                <a href="https://wa.me/+918940450960?text=Hello%20there!" target="_blank">Chat Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="col-lg-6">
-                    <div class="card p-4 shadow-sm border-0">
-                        <h3 class="fw-bold mb-3">Send a Message</h3>
+                <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
+                    <div class="contact-form-wrapper">
+                        <h3 class="form-title">Send a Message</h3>
 
-                        <form action="https://api.web3forms.com/submit" method="POST">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                             <input type="hidden" name="access_key" value="6a4d6d9c-c4a9-42f4-9b30-2001e41ae1f4">
 
-                            <div class="mb-3">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter your name"
-                                    required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Your name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Your email" required>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter your email"
-                                    required>
-                            </div>
-
-                            <div class="mb-3">
+                            <div class="form-group">
                                 <label class="form-label">Mobile Number</label>
-                                <input type="text" name="mobile" class="form-control" placeholder="Enter your number">
+                                <input type="text" name="mobile" class="form-control" placeholder="Your phone number">
                             </div>
 
-                            <div class="mb-3">
+                            <div class="form-group">
                                 <label class="form-label">Your Message</label>
-                                <textarea class="form-control" rows="5" name="message"
-                                    placeholder="Write your message..." required></textarea>
+                                <textarea class="form-control" rows="5" name="message" placeholder="Write your message..." required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100 py-2">
-                                Send Message
+                            <button type="submit" class="btn btn-submit">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
                     </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124420.83274529342!2d78.57042111406919!3d12.96218634528398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad9fd71e32e24d%3A0x28d936dfa698b045!2sNayakkaneri%20R.F.%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1720015826362!5m2!1sen!2sin"
+                        width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -505,28 +757,48 @@
 
 
 
-    <!--  ************************* Footer  Starts Here ************************** -->
+    <!--  ************************* Footer Starts Here ************************** -->
 
     <footer class="container-fluid footer">
         <div class="container">
-            <div class="row footerro">
-                <p>
-                    <span><a href="#">HOME</a></span>
-                    <span><a href="#about_us">ABOUT US</a></span>
-                    <span><a href="#skills">SKILLS</a></span>
-                    <span><a href="#services">EDUCATIONS</a></span>
-                    <span><a href="#portfolio">PORTFOLIO</a></span>
-                </p>
-                <a href="">Copyright © dhivakarp305@gmail.com | All right reserved.</a>
+            <div class="footer-content">
+                <div class="footer-logo" data-aos="fade-up">
+                    <h3>Dhivakar P</h3>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#">Home</a>
+                    <a href="#about_us">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#services">Education</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact_us">Contact</a>
+                </div>
+                <div class="footer-social" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://github.com/dhivakarperumal" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/dhivakar3005200/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-copyright" data-aos="fade-up" data-aos-delay="300">
+                    <p>&copy; 2024 Dhivakar P. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
     <script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
