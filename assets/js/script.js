@@ -1,7 +1,7 @@
 /**
  * Portfolio - Main JavaScript
  * Author: Dhivakar P
- * Version: 2.0
+ * Version: 3.0 - Enhanced Animations
  */
 
 $(document).ready(function() {
@@ -15,6 +15,13 @@ $(document).ready(function() {
     initBackToTop();
     initParticles();
     initSmoothScroll();
+    initScrollProgress();
+    initCursorEffect();
+    initTiltEffect();
+    initTextReveal();
+    initMagneticButtons();
+    initCounterAnimation();
+    initSectionAnimations();
 });
 
 /**
@@ -88,18 +95,35 @@ function initNavigation() {
     // Close mobile menu when clicking a link
     $('.nav-link-custom').on('click', function() {
         if ($(window).width() < 768) {
-            $('#menu').collapse('hide');
+            $('#menu').removeClass('show');
+            $('.small-menu i').removeClass('fa-times').addClass('fa-bars');
         }
     });
 
-    // Mobile menu toggle icon animation
+    // Mobile menu toggle
     $('.small-menu').on('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
+
+        var menu = $('#menu');
         var icon = $(this).find('i');
-        if (icon.hasClass('fa-bars')) {
-            icon.removeClass('fa-bars').addClass('fa-times');
-        } else {
+
+        if (menu.hasClass('show')) {
+            menu.removeClass('show');
             icon.removeClass('fa-times').addClass('fa-bars');
+        } else {
+            menu.addClass('show');
+            icon.removeClass('fa-bars').addClass('fa-times');
+        }
+    });
+
+    // Close menu when clicking outside
+    $(document).on('click', function(e) {
+        if ($(window).width() < 768) {
+            if (!$(e.target).closest('.header').length) {
+                $('#menu').removeClass('show');
+                $('.small-menu i').removeClass('fa-times').addClass('fa-bars');
+            }
         }
     });
 
@@ -485,6 +509,385 @@ $('.nav-link-custom').hover(
     }
 );
 
+/**
+ * Scroll Progress Bar
+ */
+function initScrollProgress() {
+    // Create progress bar element
+    var progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+}
+
+/**
+ * Custom Cursor Effect
+ */
+function initCursorEffect() {
+    // Only on desktop
+    if (window.innerWidth < 1024) return;
+
+    var cursor = document.createElement('div');
+    cursor.className = 'cursor';
+    document.body.appendChild(cursor);
+
+    var cursorFollower = document.createElement('div');
+    cursorFollower.className = 'cursor-follower';
+    document.body.appendChild(cursorFollower);
+
+    var mouseX = 0, mouseY = 0;
+    var cursorX = 0, cursorY = 0;
+    var followerX = 0, followerY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        // Smooth cursor movement
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+        cursor.style.left = cursorX - 10 + 'px';
+        cursor.style.top = cursorY - 10 + 'px';
+
+        // Slower follower
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        cursorFollower.style.left = followerX - 4 + 'px';
+        cursorFollower.style.top = followerY - 4 + 'px';
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Scale cursor on hover
+    var hoverElements = document.querySelectorAll('a, button, .btn, .gallery-item, .social-btn, .filter-btn');
+    hoverElements.forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.borderColor = '#4ecdc4';
+            cursorFollower.style.transform = 'scale(2)';
+        });
+        el.addEventListener('mouseleave', function() {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.borderColor = '#6c63ff';
+            cursorFollower.style.transform = 'scale(1)';
+        });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function() {
+        cursor.style.opacity = '0';
+        cursorFollower.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function() {
+        cursor.style.opacity = '1';
+        cursorFollower.style.opacity = '1';
+    });
+}
+
+/**
+ * 3D Tilt Effect for Cards
+ */
+function initTiltEffect() {
+    var tiltElements = document.querySelectorAll('.skills-card, .contact-card, .gallery-item, .timeline-content');
+
+    tiltElements.forEach(function(el) {
+        el.addEventListener('mousemove', function(e) {
+            var rect = el.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+
+            var centerX = rect.width / 2;
+            var centerY = rect.height / 2;
+
+            var rotateX = (y - centerY) / 20;
+            var rotateY = (centerX - x) / 20;
+
+            el.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+        });
+
+        el.addEventListener('mouseleave', function() {
+            el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+    });
+}
+
+/**
+ * Text Reveal Animation
+ */
+function initTextReveal() {
+    // Add hover effect to section titles - keep them visible by default
+    var sectionTitles = document.querySelectorAll('.session-title h2, .section-heading');
+
+    sectionTitles.forEach(function(title) {
+        title.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+        });
+        title.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+
+    // Add CSS for title styling
+    var style = document.createElement('style');
+    style.textContent = `
+        .session-title h2,
+        .section-heading {
+            transition: transform 0.3s ease;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+/**
+ * Magnetic Button Effect
+ */
+function initMagneticButtons() {
+    var magneticElements = document.querySelectorAll('.btn-glow, .btn-submit, .social-btn, .filter-btn');
+
+    magneticElements.forEach(function(el) {
+        el.addEventListener('mousemove', function(e) {
+            var rect = el.getBoundingClientRect();
+            var x = e.clientX - rect.left - rect.width / 2;
+            var y = e.clientY - rect.top - rect.height / 2;
+
+            el.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px)';
+        });
+
+        el.addEventListener('mouseleave', function() {
+            el.style.transform = 'translate(0, 0)';
+        });
+    });
+}
+
+/**
+ * Counter Animation for Stats
+ */
+function initCounterAnimation() {
+    var counters = document.querySelectorAll('.counter');
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var target = parseInt(entry.target.getAttribute('data-target'));
+                var duration = 2000;
+                var start = 0;
+                var startTime = null;
+
+                function animate(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    var progress = Math.min((currentTime - startTime) / duration, 1);
+                    var easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                    entry.target.textContent = Math.floor(easeProgress * target);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        entry.target.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(animate);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(counter) {
+        observer.observe(counter);
+    });
+}
+
+/**
+ * Section Reveal Animations
+ */
+function initSectionAnimations() {
+    // Timeline items hover enhancement - don't override AOS animations
+    var timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+            var dot = this.querySelector('.timeline-dot');
+            if (dot) {
+                dot.style.transform = 'scale(1.3)';
+                dot.style.background = '#6c63ff';
+                dot.style.boxShadow = '0 0 20px rgba(108, 99, 255, 0.5)';
+            }
+        });
+        item.addEventListener('mouseleave', function() {
+            var dot = this.querySelector('.timeline-dot');
+            if (dot && !dot.classList.contains('active')) {
+                dot.style.transform = '';
+                dot.style.background = '';
+                dot.style.boxShadow = '';
+            }
+        });
+    });
+
+    // Skill cards hover enhancement - don't override AOS animations
+    var skillCards = document.querySelectorAll('.skills-card');
+    skillCards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 20px 60px rgba(108, 99, 255, 0.2)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+
+    // Contact cards hover enhancement - don't override AOS animations
+    var contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px)';
+            this.style.boxShadow = '0 15px 40px rgba(108, 99, 255, 0.15)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+    });
+
+    // Gallery items pop-in animation
+    var galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(function(item) {
+        item.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    });
+}
+
+/**
+ * Ripple Effect for Buttons
+ */
+$(document).on('click', '.btn-glow, .btn-submit, .filter-btn', function(e) {
+    var $this = $(this);
+    var offset = $this.offset();
+    var x = e.pageX - offset.left;
+    var y = e.pageY - offset.top;
+
+    var ripple = $('<span class="ripple-effect"></span>');
+    ripple.css({
+        left: x,
+        top: y
+    });
+
+    $this.append(ripple);
+
+    setTimeout(function() {
+        ripple.remove();
+    }, 600);
+});
+
+// Add ripple CSS
+var rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+    .ripple-effect {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        animation: rippleAnim 0.6s ease-out;
+        pointer-events: none;
+    }
+    @keyframes rippleAnim {
+        to {
+            transform: translate(-50%, -50%) scale(20);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(rippleStyle);
+
+/**
+ * Parallax Mouse Movement Effect
+ */
+$(document).on('mousemove', function(e) {
+    var moveX = (e.pageX * -1 / 50);
+    var moveY = (e.pageY * -1 / 50);
+
+    $('.profile-ring').css({
+        'transform': 'translate(' + moveX + 'px, ' + moveY + 'px)'
+    });
+
+    $('.profile-ring.ring-2').css({
+        'transform': 'translate(' + (moveX * 1.5) + 'px, ' + (moveY * 1.5) + 'px)'
+    });
+});
+
+/**
+ * Intersection Observer for Fade In Elements
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    var fadeElements = document.querySelectorAll('.about-content, .info-list, .map-container, .footer-content');
+
+    var fadeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    fadeElements.forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s ease';
+        fadeObserver.observe(el);
+    });
+});
+
+/**
+ * Scroll-triggered Number Increment for Skills
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    var skillPercents = document.querySelectorAll('.skill-percent');
+
+    var percentObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var target = parseInt(entry.target.textContent);
+                var current = 0;
+                var increment = target / 50;
+                var timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        entry.target.textContent = target + '%';
+                        clearInterval(timer);
+                    } else {
+                        entry.target.textContent = Math.floor(current) + '%';
+                    }
+                }, 30);
+                percentObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillPercents.forEach(function(el) {
+        percentObserver.observe(el);
+    });
+});
+
+/**
+ * Hover Sound Effect (Optional - Uncomment to enable)
+ */
+// function playHoverSound() {
+//     var audio = new Audio('assets/sounds/hover.mp3');
+//     audio.volume = 0.1;
+//     audio.play();
+// }
+
 // Console welcome message
 console.log('%c Welcome to Dhivakar P\'s Portfolio! ',
     'background: linear-gradient(135deg, #6c63ff, #4ecdc4); color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px;');
+console.log('%c Powered by Advanced Animations v3.0 ',
+    'background: linear-gradient(135deg, #667eea, #764ba2); color: white; font-size: 12px; padding: 5px 15px; border-radius: 3px;');
