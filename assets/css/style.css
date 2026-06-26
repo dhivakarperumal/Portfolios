@@ -1489,103 +1489,207 @@ p {
 }
 
 .gallery-grid {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
+/* ---- Project Card Wrapper ---- */
 .gallery_product {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     padding: 10px;
 }
 
+/* ---- Card Shell ---- */
 .gallery-item {
     position: relative;
-    border-radius: var(--border-radius);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: var(--transition-medium);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
-    opacity: 0;
-    transition: var(--transition-fast);
+    background: #111127;
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    transition: transform 0.38s cubic-bezier(.23,1,.32,1),
+                box-shadow 0.38s ease,
+                border-color 0.38s ease;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
+    cursor: pointer;
 }
 
-.gallery-item:hover .gallery-overlay {
+/* gradient top accent line */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6c63ff, #4ecdc4, #ff6b9d);
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 60px rgba(108,99,255,0.25), 0 0 0 1px rgba(108,99,255,0.3);
+    border-color: rgba(108,99,255,0.35);
+}
+.gallery-item:hover::before {
     opacity: 1;
 }
 
+/* ---- Thumbnail ---- */
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    flex-shrink: 0;
+}
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.07);
 }
 
-.gallery-info h4 {
-    color: var(--text-light);
-    font-size: 1.1rem;
+/* ---- Hover shine overlay on image ---- */
+.gallery-item .img-shine {
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%;
+    height: 200px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    z-index: 4;
+    pointer-events: none;
+}
+.gallery-item:hover .img-shine {
+    left: 130%;
+}
+
+/* ---- Card Body (info below image) ---- */
+.gallery-card-body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    background: #111127;
+}
+
+.gallery-card-body h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.gallery-card-body p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ---- Card Footer row ---- */
+.gallery-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.gallery-card-type {
+    font-size: 0.7rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #6c63ff;
+    background: rgba(108,99,255,0.12);
+    border: 1px solid rgba(108,99,255,0.25);
+    border-radius: 50px;
+    padding: 3px 10px;
 }
 
-.gallery-info p {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.9rem;
-}
-
+/* ---- Action Buttons ---- */
 .gallery-links {
     display: flex;
-    gap: 15px;
-    margin-top: 15px;
+    gap: 8px;
+    margin: 0;
 }
 
 .gallery-links a {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 50%;
-    color: var(--text-light);
-    transition: var(--transition-fast);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                border-color 0.3s ease;
 }
 
 .gallery-links a:hover {
-    background: var(--primary-color);
+    background: #6c63ff;
+    border-color: #6c63ff;
+    color: #fff;
     transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(108,99,255,0.4);
+}
+
+/* ---- Floating overlay (removed, now card body shows info always) ---- */
+.gallery-overlay {
+    display: none;
+}
+
+/* ---- Mobile screenshot count ---- */
+.screenshot-count {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ---- Mobile badge (React Native tag) ---- */
+.mobile-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(108,99,255,0.4);
+    color: #a29bfe;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+    letter-spacing: 0.4px;
 }
 
 @media screen and (max-width: 767px) {
     .gallery {
         padding: 60px 15px;
     }
-
     .gallery-filter {
-        gap: 10px;
+        gap: 8px;
+        flex-wrap: wrap;
     }
-
     .filter-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 9px 18px;
+        font-size: 0.85rem;
     }
-
     .gallery-item img {
-        height: 180px;
+        height: 170px;
+    }
+    .gallery-card-body {
+        padding: 12px 14px 14px;
     }
 }
 
