@@ -3598,7 +3598,7 @@ img.loaded {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
-    padding: 32px 24px 28px;
+    padding: 32px 8px 28px;
     margin-bottom: 24px;
     height: 100%;
     display: flex;
