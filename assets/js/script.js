@@ -164,8 +164,7 @@ function initTypingEffect() {
         "React Native App Developer",
         "Full Stack Developer (MERN)",
         "Frontend Engineer",
-        "Python Backend Developer",
-        "UI/UX Web Designer"
+        "Python Backend Developer"
     ];
 
     var wordIndex = 0;
@@ -894,3 +893,132 @@ console.log('%c Welcome to Dhivakar P\'s Portfolio! ',
     'background: linear-gradient(135deg, #6c63ff, #4ecdc4); color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px;');
 console.log('%c Powered by Advanced Animations v3.0 ',
     'background: linear-gradient(135deg, #667eea, #764ba2); color: white; font-size: 12px; padding: 5px 15px; border-radius: 3px;');
+
+/**
+ * Mobile Project Lightbox Logic
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = document.getElementById('projectLightbox');
+    if (!lightbox) return;
+
+    const lbTitle = document.getElementById('plbTitle');
+    const lbSub = document.getElementById('plbSub');
+    const lbImg = document.getElementById('plbImg');
+    const lbCounter = document.getElementById('plbCounter');
+    const lbDots = document.getElementById('plbDots');
+    const btnNext = document.getElementById('plbNext');
+    const btnPrev = document.getElementById('plbPrev');
+    const btnClose = document.getElementById('plbClose');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    // Open Lightbox
+    document.querySelectorAll('.open-project-lightbox').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Get parent product card
+            const product = this.closest('.gallery_product');
+            if (!product) return;
+
+            const title = product.getAttribute('data-project-title') || 'Project';
+            const sub = product.getAttribute('data-project-sub') || '';
+            const desc = product.getAttribute('data-project-desc');
+            const badgeText = product.getAttribute('data-project-badge') || 'Project';
+            const badgeIcon = product.getAttribute('data-project-badge-icon') || 'fas fa-image';
+            const imagesRaw = product.getAttribute('data-project-images');
+            
+            if (!imagesRaw) return;
+
+            try {
+                currentImages = JSON.parse(imagesRaw);
+                if (currentImages.length === 0) return;
+                
+                currentIndex = 0;
+                lbTitle.textContent = title;
+                lbSub.textContent = sub;
+                
+                const plbDesc = document.getElementById('plbDesc');
+                if (plbDesc) {
+                    if (desc) {
+                        plbDesc.textContent = desc;
+                        plbDesc.classList.add('show');
+                    } else {
+                        plbDesc.textContent = '';
+                        plbDesc.classList.remove('show');
+                    }
+                }
+                
+                const plbBadgeText = document.getElementById('plbBadgeText');
+                const plbBadgeIcon = document.getElementById('plbBadgeIcon');
+                
+                if (plbBadgeText) plbBadgeText.textContent = badgeText;
+                if (plbBadgeIcon) plbBadgeIcon.className = badgeIcon;
+                
+                showImage(currentIndex);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // prevent background scrolling
+            } catch (err) {
+                console.error("Error parsing project images", err);
+            }
+        });
+    });
+
+    // Close Lightbox
+    btnClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            lbImg.src = '';
+        }, 300);
+    }
+
+    // Navigation
+    btnNext.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        showImage(currentIndex);
+    });
+
+    btnPrev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        showImage(currentIndex);
+    });
+
+    function showImage(index) {
+        lbImg.style.opacity = '0';
+        setTimeout(() => {
+            lbImg.src = currentImages[index];
+            lbImg.style.opacity = '1';
+            
+            // Update counter
+            lbCounter.textContent = `${index + 1} / ${currentImages.length}`;
+            
+            // Update dots
+            lbDots.innerHTML = '';
+            currentImages.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = `plb-dot ${i === index ? 'active' : ''}`;
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    showImage(currentIndex);
+                });
+                lbDots.appendChild(dot);
+            });
+        }, 200);
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') btnNext.click();
+        if (e.key === 'ArrowLeft') btnPrev.click();
+    });
+});
