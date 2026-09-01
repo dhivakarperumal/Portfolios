@@ -44,6 +44,7 @@ Description: Modern Portfolio with Animations
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 body {
@@ -245,7 +246,7 @@ p {
     content: '';
     position: absolute;
     top: -50%;
-    right: -50%;
+    right: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 50%);
@@ -372,10 +373,12 @@ p {
 /* Mobile Menu Toggle */
 .small-menu {
     display: none;
-    color: #333 !important;
-    font-size: 26px;
+    border: none;
+    background: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
     z-index: 99999;
 }
 
@@ -405,24 +408,48 @@ p {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 45px;
-        height: 45px;
+        width: 42px;
+        height: 42px;
         margin: 0;
+        padding: 0;
         position: absolute;
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
-        background: var(--gradient-1);
+        background: linear-gradient(135deg, #0d0d0d, #1a1500);
+        border: 1.5px solid #d4a017;
         border-radius: 10px;
-        color: #fff !important;
-        font-size: 20px;
+        box-shadow: 0 0 8px #d4a01755;
+        color: #d4a017 !important;
         z-index: 99999;
-        text-decoration: none;
+        cursor: pointer;
+        outline: none;
     }
 
     .small-menu:hover {
-        box-shadow: 0 5px 20px rgba(108, 99, 255, 0.4);
+        box-shadow: 0 0 16px #d4a01799;
     }
+
+    /* Custom hamburger bars */
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 22px;
+        height: 16px;
+    }
+
+    .hamburger-icon span {
+        display: block;
+        width: 22px;
+        height: 2.5px;
+        background: #d4a017;
+        border-radius: 3px;
+        box-shadow: 0 0 4px #d4a01788;
+    }
+
 
     .header #menu {
         display: none !important;
@@ -506,7 +533,8 @@ p {
     }
 
     .header.scroll-to-fixed-fixed .small-menu {
-        color: #fff !important;
+        border: 1.5px solid #d4a017;
+        box-shadow: 0 0 8px #d4a01755;
     }
 
     /* Hide text-right class on mobile */
@@ -2927,21 +2955,27 @@ p {
 
 /* ===================================== Scrollbar Styling ================================== */
 
+/* Hide scrollbar — all browsers, scroll still works */
+html {
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE / Edge */
+}
+
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;                   /* Chrome / Safari / Edge */
+    background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--dark-bg);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--gradient-1);
-    border-radius: 5px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-2);
+    background: transparent;
 }
 
 /* ===================================== Loading Animation for Images ================================== */
@@ -3238,6 +3272,9 @@ img.loaded {
     .gallery_product {
         padding: 5px;
         margin-bottom: 10px;
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
     }
 
     .gallery-item img {
