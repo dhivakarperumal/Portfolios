@@ -3270,15 +3270,20 @@ img.loaded {
     }
 
     .gallery_product {
-        padding: 5px;
+        padding: 5px 10px;
         margin-bottom: 10px;
         width: 100% !important;
         flex: 0 0 100% !important;
         max-width: 100% !important;
     }
 
+    .gallery-grid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .gallery-item img {
-        height: 150px;
+        height: 220px;
     }
 
     .gallery-info h4 {
