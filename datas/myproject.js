@@ -200,6 +200,24 @@ const myProjects = [
     
     
     {
+        title: "LifeTracking Web Application",
+        cardTitle: "Life Ledger",
+        subtitle: "Personal Finance & Life Tracking",
+        projectSub: "Web Development · Expense Tracking & Personal Diary",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
+        category: "web",
+        badge: "Web App",
+        badgeIcon: "fas fa-globe",
+        description: "A personal life dashboard for tracking expenses, managing budgets, writing diary entries, and keeping memories in one place.",
+        images: [
+            "assets/images/gallery/l1.png",
+            "assets/images/gallery/l2.png",
+            "assets/images/gallery/l3.png"
+        ],
+        liveUrl:"https://lifetracking.qtechx.com/",
+        delay: 250
+    },
+    {
         title: "Veetu Rusi Food Website",
         cardTitle: "Veetu Rusi Food Ordering",
         subtitle: "Food Ordering & Delivery",
