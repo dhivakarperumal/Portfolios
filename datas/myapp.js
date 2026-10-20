@@ -4,16 +4,18 @@ const myApps = [
         cardTitle: "Life Ledger App",
         imageAlt: "Life Ledger personal tracking dashboard",
         subtitle: "Personal Finance, Diary & Memories",
-        projectSub: "Mobile App · Personal Life Tracking",
+        projectSub: "MobileApp · Personal Life Tracking",
         technology: "React Native",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A personal dashboard app for tracking expenses, managing a budget, writing diary entries, and keeping life memories together.",
         images: [
-            "assets/images/gallery/l1.png",
-            "assets/images/gallery/l2.png",
-            "assets/images/gallery/l3.png"
+            "assets/MobileApp/l1.jpeg",
+            "assets/MobileApp/l2.jpeg",
+            "assets/MobileApp/l3.jpeg",
+            "assets/MobileApp/l4.jpeg",
+            "assets/MobileApp/l5.jpeg",
         ],
         delay: 100
     },
@@ -22,15 +24,22 @@ const myApps = [
         cardTitle: "Kavi’s Dry Fruits",
         imageAlt: "Kavi’s Dry Fruits online store",
         subtitle: "Dry Fruits & Nuts Shopping",
-        projectSub: "Mobile App · Grocery E-Commerce",
+        projectSub: "MobileApp · Grocery E-Commerce",
         technology: "React Native",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.kaviapp",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A shopping app for browsing Kavi’s dry fruits and nuts, discovering products, and placing online orders.",
         images: [
-            "assets/images/gallery/kavis1.png",
-            "assets/images/gallery/kavisa1.png"
+            
+           
+            "assets/MobileApp/k3.webp",
+            "assets/MobileApp/k4.webp",
+            "assets/MobileApp/k5.webp",
+            "assets/MobileApp/k6.webp",
+            "assets/MobileApp/k1.webp",
+             "assets/MobileApp/k2.webp",
         ],
         delay: 150
     },
@@ -46,12 +55,12 @@ const myApps = [
         badgeIcon: "fas fa-mobile-alt",
         description: "The administrative portal for TrackFina, providing an overview of financial tracking data, user management, and analytics.",
         images: [
-            "assets/Mobile App/t1.jpeg",
-            "assets/Mobile App/t2.jpeg",
-            "assets/Mobile App/t3.jpeg",
-            "assets/Mobile App/t4.jpeg",
-            "assets/Mobile App/t5.jpeg",
-            "assets/Mobile App/t6.jpeg"
+            "assets/MobileApp/t1.jpeg",
+            "assets/MobileApp/t2.jpeg",
+            "assets/MobileApp/t3.jpeg",
+            "assets/MobileApp/t4.jpeg",
+            "assets/MobileApp/t5.jpeg",
+            "assets/MobileApp/t6.jpeg"
         ],
         delay: 200
     },
@@ -67,10 +76,10 @@ const myApps = [
         badgeIcon: "fas fa-mobile-alt",
         description: "A mobile portal for TrackFina agents to manage daily logs, client data, and on-the-go financial updates.",
         images: [
-            "assets/Mobile App/ta1.jpeg",
-            "assets/Mobile App/ta2.jpeg",
-            "assets/Mobile App/ta3.jpeg",
-            "assets/Mobile App/ta4.jpeg"
+            "assets/MobileApp/ta1.jpeg",
+            "assets/MobileApp/ta2.jpeg",
+            "assets/MobileApp/ta3.jpeg",
+            "assets/MobileApp/ta4.jpeg"
         ],
         delay: 250
     },
@@ -86,10 +95,10 @@ const myApps = [
         badgeIcon: "fas fa-mobile-alt",
         description: "A restaurant point-of-sale app for quick billing, menu navigation, table management, and receipt generation.",
         images: [
-            "assets/Mobile App/pos1.jpeg",
-            "assets/Mobile App/p2.jpeg",
-            "assets/Mobile App/p3.jpeg",
-            "assets/Mobile App/p4.jpeg"
+            "assets/MobileApp/pos1.jpeg",
+            "assets/MobileApp/p2.jpeg",
+            "assets/MobileApp/p3.jpeg",
+            "assets/MobileApp/p4.jpeg"
         ],
         delay: 300
     },
@@ -98,15 +107,17 @@ const myApps = [
         cardTitle: "Supermarket & Grocery App",
         imageAlt: "Supermarket and grocery shopping",
         subtitle: "Online Grocery Shopping & Delivery",
-        projectSub: "Mobile App · Grocery E-Commerce",
+        projectSub: "MobileApp · Grocery E-Commerce",
         technology: "React Native",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A grocery shopping app for discovering supermarket products, building an order, and arranging delivery.",
         images: [
-            "assets/images/gallery/super1.png",
-            "assets/images/gallery/supera1.png"
+            "assets/MobileApp/s1.jpeg",
+            "assets/MobileApp/s2.jpeg",
+            "assets/MobileApp/s3.jpeg",
+            "assets/MobileApp/s4.jpeg"
         ],
         delay: 250
     },
@@ -115,15 +126,19 @@ const myApps = [
         cardTitle: "DAP Fitness App",
         imageAlt: "DAP gym and fitness website",
         subtitle: "Fitness & Gym Membership",
-        projectSub: "Mobile App · Fitness & Wellness",
+        projectSub: "MobileApp · Fitness & Wellness",
         technology: "React Native",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.dapfitnessstudio.app",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A fitness app concept for exploring gym services, discovering workout options, and keeping members connected with DAP Fitness.",
         images: [
-            "assets/images/gallery/gymw1.png",
-            "assets/images/gallery/gyma1.png"
+            "assets/MobileApp/d1.webp",
+            "assets/MobileApp/d2.webp",
+            "assets/MobileApp/d3.webp",
+            "assets/MobileApp/d4.webp",
+            "assets/MobileApp/d5.webp",
         ],
         delay: 300
     },
@@ -132,15 +147,22 @@ const myApps = [
         cardTitle: "Q Techx App",
         imageAlt: "Q Techx company management system",
         subtitle: "Company Services & Management",
-        projectSub: "Mobile App · Business Management",
+        projectSub: "MobileApp · Business Management",
         technology: "React Native",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.qtechx.qtechxapp",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A company app concept for accessing Q Techx services and business management features from a mobile device.",
         images: [
-            "assets/images/gallery/qtechx1.png",
-            "assets/images/gallery/qtechxa1.png"
+            
+            "assets/MobileApp/q2.webp",
+            "assets/MobileApp/q3.webp",
+            "assets/MobileApp/q4.webp",
+            "assets/MobileApp/q5.webp",
+            "assets/MobileApp/q6.webp",
+            "assets/MobileApp/q7.webp",
+            "assets/MobileApp/q1.webp",
         ],
         delay: 350
     },
@@ -149,18 +171,18 @@ const myApps = [
         cardTitle: "Veetu Rusi App",
         imageAlt: "Veetu Rusi food ordering website",
         subtitle: "Food Ordering & Delivery",
-        projectSub: "Mobile App · Food & Restaurant",
+        projectSub: "MobileApp · Food & Restaurant",
         technology: "React Native",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A food ordering app concept for exploring Veetu Rusi dishes and ordering meals for delivery.",
         images: [
-            "assets/images/gallery/veeturusi1.png",
-            "assets/images/gallery/veeturusia1.png",
-            "assets/images/gallery/veeturusid1.png",
-            "assets/images/gallery/veeturusih1.png",
-            "assets/images/gallery/veeturusis1.png"
+            "assets/MobileApp/v1.jpeg",
+            "assets/MobileApp/v2.jpeg",
+            "assets/MobileApp/v3.jpeg",
+            "assets/MobileApp/v4.jpeg",
+            "assets/MobileApp/v5.jpeg"
         ],
         delay: 400
     },
@@ -169,15 +191,17 @@ const myApps = [
         cardTitle: "Car Service Booking",
         imageAlt: "Car service booking and management system",
         subtitle: "Vehicle Service Booking & Management",
-        projectSub: "Mobile App · Automotive Services",
+        projectSub: "MobileApp · Automotive Services",
         technology: "React Native",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
         description: "A car service app concept for finding vehicle services, booking appointments, and managing service requests.",
         images: [
-            "assets/images/gallery/car1.png",
-            "assets/images/gallery/cara1.png"
+            "assets/MobileApp/c1.jpeg",
+            "assets/MobileApp/c2.jpeg",
+            "assets/MobileApp/c3.jpeg",
+            "assets/MobileApp/c4.jpeg",
         ],
         delay: 450
     }

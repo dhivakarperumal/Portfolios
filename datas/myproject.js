@@ -347,6 +347,9 @@ function renderProjectCard(project) {
     const liveLink = project.liveUrl
         ? '<a href="' + safe(project.liveUrl) + '" target="_blank" rel="noopener noreferrer" title="Live Link"><i class="fas fa-external-link-alt"></i></a>'
         : "";
+    const playStoreLink = isMobile && project.playStoreUrl
+        ? '<a href="' + safe(project.playStoreUrl) + '" target="_blank" rel="noopener noreferrer" title="Install from Google Play" aria-label="Install ' + safe(title) + ' from Google Play"><i class="fab fa-google-play"></i></a>'
+        : "";
 
     return '<div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ' + category +
         (isLive ? " live" : " not-live") + '" data-aos="zoom-in" data-aos-delay="' + project.delay + '"' +
@@ -363,7 +366,7 @@ function renderProjectCard(project) {
         '<div class="gallery-card-footer">' + footerContent +
         '<div class="gallery-links">' +
         '<a href="#" class="open-project-lightbox" title="View Screenshots"><i class="fas fa-eye"></i></a>' +
-        liveLink + '</div></div></div></div></div>';
+        liveLink + playStoreLink + '</div></div></div></div></div>';
 }
 
 const projectGrid = document.getElementById("projectGrid");
