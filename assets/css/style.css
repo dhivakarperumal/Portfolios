@@ -1524,6 +1524,37 @@ p {
     text-transform: uppercase;
 }
 
+.not-live-project-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(251, 191, 36, 0.45);
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fbbf24;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.filter-btn-not-live {
+    border-color: #fbbf24;
+    color: #fbbf24;
+}
+
+.filter-btn-not-live:hover,
+.filter-btn-not-live.active {
+    background: #b7791f;
+    border-color: transparent;
+    color: #fff;
+}
+
 .gallery-grid {
     margin-top: 30px;
 }

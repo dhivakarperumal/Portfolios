@@ -414,9 +414,10 @@ function renderProjectCard(project) {
     const image = project.images[0];
     const screenshotLabel = project.images.length === 1 ? "Screenshot" : "Screenshots";
     const safe = escapeProjectHtml;
-    const liveBadge = project.liveUrl
+    const isLive = Boolean(project.liveUrl);
+    const statusBadge = isLive
         ? '<div class="live-project-badge"><span class="live-dot"></span> Live</div>'
-        : "";
+        : '<div class="not-live-project-badge"><i class="fas fa-clock"></i> Not Live Yet</div>';
     const mobileBadge = isMobile
         ? '<div class="mobile-badge" title="' + safe(project.technology) + '"><i class="' + safe(project.badgeIcon) + '"></i> ' + safe(project.technology.split(" · ")[0]) + '</div>'
         : "";
@@ -428,7 +429,7 @@ function renderProjectCard(project) {
         : "";
 
     return '<div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ' + safe(project.category) +
-        (project.liveUrl ? " live" : "") + '" data-aos="zoom-in" data-aos-delay="' + project.delay + '"' +
+        (isLive ? " live" : " not-live") + '" data-aos="zoom-in" data-aos-delay="' + project.delay + '"' +
         ' data-project-title="' + safe(project.title) + '"' +
         ' data-project-sub="' + safe(project.projectSub || project.subtitle) + '"' +
         ' data-project-badge="' + safe(project.badge) + '"' +
@@ -437,7 +438,7 @@ function renderProjectCard(project) {
         ' data-project-images="' + safe(JSON.stringify(project.images)) + '">' +
         '<div class="gallery-item' + (isMobile ? " mobile-project-card" : "") + '">' +
         '<img src="' + safe(image) + '" class="img-responsive" alt="' + safe(project.imageAlt || project.title) + '">' +
-        '<div class="img-shine"></div>' + liveBadge + mobileBadge +
+        '<div class="img-shine"></div>' + statusBadge + mobileBadge +
         '<div class="gallery-card-body"><h4>' + safe(title) + '</h4><p>' + safe(project.subtitle) + '</p>' +
         '<div class="gallery-card-footer">' + footerContent +
         '<div class="gallery-links">' +
