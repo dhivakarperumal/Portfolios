@@ -912,6 +912,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentImages = [];
     let currentIndex = 0;
+    let imageLoadToken = 0;
 
     // Open Lightbox
     document.querySelectorAll('.open-project-lightbox').forEach(btn => {
@@ -932,7 +933,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 currentImages = JSON.parse(imagesRaw);
-                if (currentImages.length === 0) return;
+                if (!Array.isArray(currentImages) || currentImages.length === 0 ||
+                    currentImages.some(image => typeof image !== 'string' || image.length === 0)) {
+                    console.error("Project screenshots must be a non-empty array of image paths.");
+                    return;
+                }
                 
                 currentIndex = 0;
                 lbTitle.textContent = title;
@@ -975,43 +980,73 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
-        setTimeout(() => {
-            lbImg.src = '';
-        }, 300);
+        imageLoadToken++;
+        lbImg.onload = null;
+        lbImg.onerror = null;
+        lbImg.removeAttribute('src');
     }
 
     // Navigation
     btnNext.addEventListener('click', () => {
+        if (currentImages.length < 2) return;
         currentIndex = (currentIndex + 1) % currentImages.length;
         showImage(currentIndex);
     });
 
     btnPrev.addEventListener('click', () => {
+        if (currentImages.length < 2) return;
         currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
         showImage(currentIndex);
     });
 
     function showImage(index) {
+        if (currentImages.length === 0) return;
+
+        currentIndex = (index + currentImages.length) % currentImages.length;
+        const imageIndex = currentIndex;
+        const imagePath = currentImages[imageIndex];
+        const loadToken = ++imageLoadToken;
+
         lbImg.style.opacity = '0';
-        setTimeout(() => {
-            lbImg.src = currentImages[index];
-            lbImg.style.opacity = '1';
-            
-            // Update counter
-            lbCounter.textContent = `${index + 1} / ${currentImages.length}`;
-            
-            // Update dots
-            lbDots.innerHTML = '';
+        lbImg.onload = function () {
+            if (loadToken === imageLoadToken) {
+                lbImg.style.opacity = '1';
+            }
+        };
+        lbImg.onerror = function () {
+            if (loadToken === imageLoadToken) {
+                lbImg.style.opacity = '1';
+                console.error("Unable to load project screenshot:", imagePath);
+            }
+        };
+        lbImg.src = imagePath;
+
+        if (currentImages.length > 1) {
+            btnNext.style.display = '';
+            btnPrev.style.display = '';
+            lbDots.style.display = '';
+        } else {
+            btnNext.style.display = 'none';
+            btnPrev.style.display = 'none';
+            lbDots.style.display = 'none';
+        }
+
+        lbCounter.textContent = `${imageIndex + 1} / ${currentImages.length}`;
+
+        lbDots.innerHTML = '';
+        if (currentImages.length > 1) {
             currentImages.forEach((_, i) => {
-                const dot = document.createElement('span');
-                dot.className = `plb-dot ${i === index ? 'active' : ''}`;
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = `plb-dot ${i === imageIndex ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Show screenshot ${i + 1}`);
                 dot.addEventListener('click', () => {
                     currentIndex = i;
                     showImage(currentIndex);
                 });
                 lbDots.appendChild(dot);
             });
-        }, 200);
+        }
     }
 
     // Keyboard support
