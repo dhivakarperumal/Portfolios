@@ -1,7 +1,10 @@
 const myProjects = [
     {
         title: "DAP Gym Website",
-        subtitle: "Web Application",
+        cardTitle: "DAP Fitness & Gym",
+        subtitle: "Fitness & Gym Website",
+        projectSub: "Web Development · Fitness Platform",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -12,7 +15,10 @@ const myProjects = [
     },
     {
         title: "Q Techx Company Management System",
-        subtitle: "Web Application",
+        cardTitle: "Q Techx Company Management System",
+        subtitle: "Company Management System",
+        projectSub: "Web Development · Business Management",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -24,7 +30,10 @@ const myProjects = [
     
     {
         title: "Saree World Website",
-        subtitle: "Web Application",
+        cardTitle: "Saree World Online Store",
+        subtitle: "Saree & Fashion E-Commerce",
+        projectSub: "Web Development · E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -35,7 +44,10 @@ const myProjects = [
     },
     {
         title: "Sri Saravana Shopping Website",
-        subtitle: "Web Application",
+        cardTitle: "Sri Saravana Shopping",
+        subtitle: "Online Shopping & E-Commerce",
+        projectSub: "Web Development · E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -46,7 +58,10 @@ const myProjects = [
     },
     {
         title: "MauvalPrint Website",
-        subtitle: "Web Application",
+        cardTitle: "MauvalPrint",
+        subtitle: "Printing & Custom Products",
+        projectSub: "Web Development · Printing E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -58,7 +73,10 @@ const myProjects = [
 
     {
         title: "Kavi’s Dry Fruits Website",
-        subtitle: "Web Application",
+        cardTitle: "Kavi’s Dry Fruits Online Store",
+        subtitle: "Dry Fruits & Nuts E-Commerce",
+        projectSub: "Web Development · E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -68,12 +86,51 @@ const myProjects = [
         delay: 200
     },
     
-    
+    {
+        title: "Gold Shop Website",
+        cardTitle: "Gold Shop Online Store",
+        subtitle: "Gold Jewellery & E-Commerce",
+        projectSub: "Web Development · Jewellery E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
+        category: "web",
+        badge: "Web App",
+        badgeIcon: "fas fa-globe",
+        description: "A responsive online storefront concept for browsing gold jewellery collections and shopping for timeless designs.",
+        images: [
+            "assets/images/gallery/gold1.png",
+            "assets/images/gallery/golda2.png"
+        ],
+        liveUrl: "https://farmely.qtechx.com/",
+        delay: 300
+    },
 
  
    {
-        title: "Supermarket & Grocery Delivery Website",
-        subtitle: "Web Application",
+       title: "Photo Frame Collection Website",
+       cardTitle: "Photo Frames, Gifts & Albums",
+       subtitle: "Custom Photo Frames & Personalized Gifts",
+       projectSub: "Web Development · Photo Gifts & Albums",
+       technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
+       category: "web",
+       badge: "Web App",
+       badgeIcon: "fas fa-globe",
+       description: "An online collection for discovering custom photo frames, keepsake albums, and personalized gifts for special occasions.",
+       images: [
+            "assets/images/gallery/qf1.png",
+            "assets/images/gallery/qf2.png",
+            "assets/images/gallery/qf3.png",
+            "assets/images/gallery/qf4.png",
+            
+       ],
+       liveUrl: "https://qframes.qtechx.com/",
+       delay: 350
+   },
+   {
+       title: "Supermarket & Grocery Delivery Website",
+        cardTitle: "Supermarket Online Shopping",
+        subtitle: "Supermarket & Grocery Delivery",
+        projectSub: "Web Development · E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -84,8 +141,70 @@ const myProjects = [
     },
 
     {
+        title: "Feather VFX Studio Website",
+        cardTitle: "Feather VFX Studio",
+        subtitle: "Visual Effects & Creative Studio",
+        projectSub: "Web Development · Creative Portfolio",
+        technology: "React.js · Tailwind CSS · JavaScript",
+        category: "Web App",
+        badge: "Website",
+        badgeIcon: "fas fa-globe",
+        description:
+            "A visually engaging website for Feather VFX Studio, showcasing creative visual effects, featured projects, studio services, showreels, and career opportunities. The design features cinematic imagery, immersive banners, and elegant navigation to deliver a professional digital portfolio experience.",
+        images: [
+            "assets/images/gallery/feather1.png",
+            "assets/images/gallery/feather2.png",
+            "assets/images/gallery/feather3.png",
+            "assets/images/gallery/feather4.png"
+        ],
+        delay: 100,
+        liveUrl: "https://feathervfx.com/"
+},
+
+{
+        title: "Ozone Industries Website",
+        cardTitle: "Ozone Industries",
+        subtitle: "Industrial Company Website",
+        projectSub: "Web Development · Corporate Website",
+        technology: "HTML · CSS · JavaScript · Bootstrap",
+        category: "web",
+        badge: "Web App",
+        badgeIcon: "fas fa-globe",
+        description: "A modern web application built with robust performance and responsive design.",
+        images: ["assets/images/gallery/ozn.png"],
+        liveUrl: "https://ozoneindustrys.com/",
+        delay: 400
+    },
+
+     {
+        title: "Marutham Marketing – Petro Chemical Solutions",
+        cardTitle: "Marutham Marketing",
+        subtitle: "Petrochemical Products & Industrial Solutions",
+        projectSub: "Web Development · Petrochemical Industry",
+        category: "web",
+        badge: "Business Website",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
+        category: "web",
+        badge: "Web App",
+        badgeIcon: "fas fa-globe",
+        description: "A restaurant website concept for exploring traditional South Indian tiffin, browsing a menu, and ordering freshly prepared meals.",
+        images: ["assets/images/gallery/m1.png",
+            "assets/images/gallery/m2.png",
+            "assets/images/gallery/m3.png",
+            "assets/images/gallery/m4.png",
+            
+        ],
+        liveUrl: "https://maruthammarketing.com/",
+        delay: 250
+    },
+    
+    
+    {
         title: "Veetu Rusi Food Website",
-        subtitle: "Web Application",
+        cardTitle: "Veetu Rusi Food Ordering",
+        subtitle: "Food Ordering & Delivery",
+        projectSub: "Web Development · Food Delivery",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -103,7 +222,10 @@ const myProjects = [
     
      {
         title: "Car Service – Booking & Management System",
-        subtitle: "Web Application",
+        cardTitle: "Car Service Booking System",
+        subtitle: "Vehicle Service Booking & Management",
+        projectSub: "Web Development · Booking & Management",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -112,39 +234,16 @@ const myProjects = [
         liveUrl: "https://cars.qtechx.com/",
         delay: 200
     },
-    {
-        title: "Ozone Industries Website",
-        subtitle: "Web Application",
-        category: "web",
-        badge: "Web App",
-        badgeIcon: "fas fa-globe",
-        description: "A modern web application built with robust performance and responsive design.",
-        images: ["assets/images/gallery/ozn.png"],
-        liveUrl: "https://ozoneindustrys.com/",
-        delay: 400
-    },
    
-    {
-        title: "Feather VFX Studio Website",
-        subtitle: "Visual Effects & Creative Studio",
-        category: "Web App",
-        badge: "Website",
-        badgeIcon: "fas fa-globe",
-        description:
-            "A visually engaging website for Feather VFX Studio, showcasing creative visual effects, featured projects, studio services, showreels, and career opportunities. The design features cinematic imagery, immersive banners, and elegant navigation to deliver a professional digital portfolio experience.",
-        images: [
-            "assets/images/gallery/feather1.png",
-            "assets/images/gallery/feather2.png",
-            "assets/images/gallery/feather3.png",
-            "assets/images/gallery/feather4.png"
-        ],
-        delay: 100,
-        liveUrl: "https://feathervfx.com/"
-},
+   
+    
     
     {
         title: "Babe’s World – E-Commerce Website",
-        subtitle: "Web Application",
+        cardTitle: "Babe’s World Online Store",
+        subtitle: "Fashion & Lifestyle E-Commerce",
+        projectSub: "Web Development · E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -155,7 +254,10 @@ const myProjects = [
     },
     {
         title: "Formerly – Business Website",
-        subtitle: "Web Application",
+        cardTitle: "Formerly Business Website",
+        subtitle: "Business & Brand Website",
+        projectSub: "Web Development · Business Website",
+        technology: "HTML · CSS · JavaScript · Bootstrap",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -166,7 +268,10 @@ const myProjects = [
     },
     {
         title: "Fresh Essentials Delivered to You",
-        subtitle: "Web Application",
+        cardTitle: "Fresh Essentials Grocery Store",
+        subtitle: "Online Grocery Shopping & Delivery",
+        projectSub: "Web Development · Grocery E-Commerce",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -177,7 +282,10 @@ const myProjects = [
     },
     {
         title: "Learning Management Website",
-        subtitle: "Web Application",
+        cardTitle: "Learning Management System",
+        subtitle: "Online Learning & Course Management",
+        projectSub: "Web Development · Education Platform",
+        technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
@@ -186,11 +294,13 @@ const myProjects = [
         liveUrl: "https://qtechx.com/",
         delay: 200
     },
+    
     {
         title: "Budget Tracker App",
         cardTitle: "Budget Tracker App",
         subtitle: "Personal Finance App",
         projectSub: "React Native · Personal Finance",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
@@ -210,6 +320,7 @@ const myProjects = [
         imageAlt: "TrackFina Admin",
         subtitle: "Finance Tracking App",
         projectSub: "React Native · Financial Tracking",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
@@ -231,6 +342,7 @@ const myProjects = [
         imageAlt: "TrackFina Agent",
         subtitle: "Agent Portal App",
         projectSub: "React Native · Agent Portal",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
@@ -246,9 +358,11 @@ const myProjects = [
     },
     {
         title: "Restaurant POS App",
+        cardTitle: "Restaurant POS App",
         imageAlt: "Restaurant POS",
         subtitle: "Food Ordering & Billing",
         projectSub: "React Native · Food & Billing",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
@@ -286,7 +400,7 @@ function renderProjectCard(project) {
         ? '<div class="live-project-badge"><span class="live-dot"></span> Live</div>'
         : "";
     const mobileBadge = isMobile
-        ? '<div class="mobile-badge"><i class="' + safe(project.badgeIcon) + '"></i> ' + safe(project.technology) + '</div>'
+        ? '<div class="mobile-badge" title="' + safe(project.technology) + '"><i class="' + safe(project.badgeIcon) + '"></i> ' + safe(project.technology.split(" · ")[0]) + '</div>'
         : "";
     const footerContent = isMobile
         ? '<span class="screenshot-count"><i class="fas fa-images"></i> ' + project.images.length + " " + screenshotLabel + '</span>'
