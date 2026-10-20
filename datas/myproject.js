@@ -133,10 +133,10 @@ const myProjects = [
         description:
             "A visually engaging website for Feather VFX Studio, showcasing creative visual effects, featured projects, studio services, showreels, and career opportunities. The design features cinematic imagery, immersive banners, and elegant navigation to deliver a professional digital portfolio experience.",
         images: [
-            "assets/Website/feather-vfx-1.jpeg",
-            "assets/Website/feather-vfx-2.jpeg",
-            "assets/Website/feather-vfx-3.jpeg",
-            "assets/Website/feather-vfx-4.jpeg"
+            "assets/images/gallery/feather1.png",
+            "assets/images/gallery/feather2.png",
+            "assets/images/gallery/feather3.png",
+            "assets/images/gallery/feather4.png"
         ],
         delay: 100,
         liveUrl: "https://feathervfx.com/"
