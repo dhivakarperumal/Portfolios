@@ -312,87 +312,7 @@ const myProjects = [
         delay: 200
     },
     
-    {
-        title: "Budget Tracker App",
-        cardTitle: "Budget Tracker App",
-        subtitle: "Personal Finance App",
-        projectSub: "React Native · Personal Finance",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        technology: "React Native",
-        description: "A full-featured personal finance application built with React Native. Enables users to manage daily budgets, track expenses, log income sources, and view graphical reports of their financial health seamlessly.",
-        images: [
-            "assets/Mobile App/e1.jpeg",
-            "assets/Mobile App/e2.jpeg",
-            "assets/Mobile App/e3.jpeg",
-            "assets/Mobile App/e4.jpeg"
-        ],
-        delay: 100
-    },
-    {
-        title: "TrackFina – Admin App",
-        cardTitle: "TrackFina – Admin",
-        imageAlt: "TrackFina Admin",
-        subtitle: "Finance Tracking App",
-        projectSub: "React Native · Financial Tracking",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        technology: "React Native",
-        description: "The administrative portal for the TrackFina ecosystem. Designed to give admins a comprehensive bird's-eye view over financial tracking data, user management, and detailed analytical metrics delivered with a premium UI.",
-        images: [
-            "assets/Mobile App/t1.jpeg",
-            "assets/Mobile App/t2.jpeg",
-            "assets/Mobile App/t3.jpeg",
-            "assets/Mobile App/t4.jpeg",
-            "assets/Mobile App/t5.jpeg",
-            "assets/Mobile App/t6.jpeg"
-        ],
-        delay: 200
-    },
-    {
-        title: "TrackFina – Agent App",
-        cardTitle: "TrackFina – Agent",
-        imageAlt: "TrackFina Agent",
-        subtitle: "Agent Portal App",
-        projectSub: "React Native · Agent Portal",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        technology: "React Native",
-        description: "The dedicated agent client of the TrackFina application suit. Optimizes the workflow for field agents managing daily logs, client data entries, and on-the-go financial updates via a highly responsive mobile interface.",
-        images: [
-            "assets/Mobile App/ta1.jpeg",
-            "assets/Mobile App/ta2.jpeg",
-            "assets/Mobile App/ta3.jpeg",
-            "assets/Mobile App/ta4.jpeg"
-        ],
-        delay: 300
-    },
-    {
-        title: "Restaurant POS App",
-        cardTitle: "Restaurant POS App",
-        imageAlt: "Restaurant POS",
-        subtitle: "Food Ordering & Billing",
-        projectSub: "React Native · Food & Billing",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        technology: "React Native",
-        description: "A complete Point of Sale (POS) solution for the restaurant industry. Incorporates quick billing processing, menu navigations, table management, and an efficient receipt generating system tailored for modern tablets and phones.",
-        images: [
-            "assets/Mobile App/pos1.jpeg",
-            "assets/Mobile App/p2.jpeg",
-            "assets/Mobile App/p3.jpeg",
-            "assets/Mobile App/p4.jpeg"
-        ],
-        delay: 400
-    }
+ 
 ];
 
 function escapeProjectHtml(value) {
@@ -409,6 +329,7 @@ function escapeProjectHtml(value) {
 
 function renderProjectCard(project) {
     const isMobile = project.category === "mobile";
+    const category = isMobile ? "mobile" : "web";
     const title = project.cardTitle || project.title;
     const image = project.images[0];
     const screenshotLabel = project.images.length === 1 ? "Screenshot" : "Screenshots";
@@ -427,7 +348,7 @@ function renderProjectCard(project) {
         ? '<a href="' + safe(project.liveUrl) + '" target="_blank" rel="noopener noreferrer" title="Live Link"><i class="fas fa-external-link-alt"></i></a>'
         : "";
 
-    return '<div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ' + safe(project.category) +
+    return '<div class="gallery_product col-lg-3 col-md-4 col-sm-6 col-6 filter ' + category +
         (isLive ? " live" : " not-live") + '" data-aos="zoom-in" data-aos-delay="' + project.delay + '"' +
         ' data-project-title="' + safe(project.title) + '"' +
         ' data-project-sub="' + safe(project.projectSub || project.subtitle) + '"' +
@@ -448,5 +369,5 @@ function renderProjectCard(project) {
 const projectGrid = document.getElementById("projectGrid");
 
 if (projectGrid) {
-    projectGrid.innerHTML = myProjects.map(renderProjectCard).join("");
+    projectGrid.innerHTML = myProjects.concat(myApps).map(renderProjectCard).join("");
 }
