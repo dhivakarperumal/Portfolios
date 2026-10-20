@@ -460,9 +460,7 @@ $(window).on('scroll', function () {
     var scroll = $(window).scrollTop();
 
     if (scroll < window.innerHeight) {
-        $('.home-cover').css({
-            'transform': 'translateY(' + (scroll * 0.3) + 'px)'
-        });
+        $('#home').css('--hero-parallax-y', (scroll * 0.3) + 'px');
 
         $('.profile-img-wrapper').css({
             'transform': 'translateY(' + (scroll * 0.1) + 'px)'
@@ -679,7 +677,9 @@ function initCounterAnimation() {
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                var target = parseInt(entry.target.getAttribute('data-target'));
+                var targetValue = entry.target.getAttribute('data-target');
+                var target = parseFloat(targetValue);
+                var decimalPlaces = (targetValue.split('.')[1] || '').length;
                 var duration = 2000;
                 var start = 0;
                 var startTime = null;
@@ -688,12 +688,12 @@ function initCounterAnimation() {
                     if (!startTime) startTime = currentTime;
                     var progress = Math.min((currentTime - startTime) / duration, 1);
                     var easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-                    entry.target.textContent = Math.floor(easeProgress * target);
+                    entry.target.textContent = (easeProgress * target).toFixed(decimalPlaces);
 
                     if (progress < 1) {
                         requestAnimationFrame(animate);
                     } else {
-                        entry.target.textContent = target;
+                        entry.target.textContent = targetValue;
                     }
                 }
 
