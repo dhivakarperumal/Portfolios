@@ -285,17 +285,16 @@ const myProjects = [
         delay: 400
     },
     {
-        title: "Fresh Essentials Delivered to You",
-        cardTitle: "Fresh Essentials Grocery Store",
-        subtitle: "Online Grocery Shopping & Delivery",
-        projectSub: "Web Development · Grocery E-Commerce",
+        title: "Dental Hospital Management System",
+        cardTitle: "Dental Hospital Management",
+        subtitle: "Dental Clinic Website & Admin Dashboard",
+        projectSub: "Web Development · Healthcare Management",
         technology: "React.js · Tailwind CSS · Node.js · Express.js · MySQL",
         category: "web",
         badge: "Web App",
         badgeIcon: "fas fa-globe",
-        description: "A modern web application built with robust performance and responsive design.",
+        description: "A dental hospital platform featuring a patient-facing clinic website and an admin dashboard for managing patients, appointments, doctors, treatments, billing, and inventory.",
         images: ["assets/images/gallery/d1.png", "assets/images/gallery/da1.png"],
-        liveUrl: "https://dmart.qtechx.com/",
         delay: 300
     },
     {
@@ -309,7 +308,7 @@ const myProjects = [
         badgeIcon: "fas fa-globe",
         description: "A modern web application built with robust performance and responsive design.",
         images: ["assets/images/gallery/s1.png", "assets/images/gallery/s2.png"],
-        liveUrl: "https://qtechx.com/",
+       
         delay: 200
     },
     
