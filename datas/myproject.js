@@ -146,7 +146,7 @@ const myProjects = [
         subtitle: "Visual Effects & Creative Studio",
         projectSub: "Web Development · Creative Portfolio",
         technology: "React.js · Tailwind CSS · JavaScript",
-        category: "Web App",
+        category: "web",
         badge: "Website",
         badgeIcon: "fas fa-globe",
         description:
@@ -334,7 +334,7 @@ function renderProjectCard(project) {
     const image = project.images[0];
     const screenshotLabel = project.images.length === 1 ? "Screenshot" : "Screenshots";
     const safe = escapeProjectHtml;
-    const isLive = Boolean(project.liveUrl);
+    const isLive = Boolean(project.liveUrl || project.playStoreUrl);
     const statusBadge = isLive
         ? '<div class="live-project-badge"><span class="live-dot"></span> Live</div>'
         : '<div class="not-live-project-badge"><i class="fas fa-clock"></i> Not Live Yet</div>';
@@ -373,4 +373,9 @@ const projectGrid = document.getElementById("projectGrid");
 
 if (projectGrid) {
     projectGrid.innerHTML = myProjects.concat(myApps).map(renderProjectCard).join("");
+
+    document.querySelectorAll(".filter-count[data-count-category]").forEach(function (countElement) {
+        const category = countElement.getAttribute("data-count-category");
+        countElement.textContent = projectGrid.querySelectorAll(".gallery_product." + category).length;
+    });
 }

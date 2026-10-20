@@ -94,7 +94,7 @@ function initNavigation() {
 
     // Close mobile menu when clicking a link
     $('.nav-link-custom').on('click', function () {
-        if ($(window).width() < 768) {
+        if ($(window).width() < 992) {
             $('#menu').removeClass('show');
             $('.small-menu i').removeClass('fa-times').addClass('fa-bars');
             $('.small-menu').attr('aria-expanded', 'false');
@@ -122,7 +122,7 @@ function initNavigation() {
 
     // Close menu when clicking outside
     $(document).on('click', function (e) {
-        if ($(window).width() < 768) {
+        if ($(window).width() < 992) {
             if (!$(e.target).closest('.header').length) {
                 $('#menu').removeClass('show');
                 $('.small-menu i').removeClass('fa-times').addClass('fa-bars');

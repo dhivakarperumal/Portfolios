@@ -6,6 +6,7 @@ const myApps = [
         subtitle: "Personal Finance, Diary & Memories",
         projectSub: "MobileApp · Personal Life Tracking",
         technology: "React Native",
+        liveUrl: "https://lifetracking.qtechx.com/",
         category: "mobile",
         badge: "Mobile App",
         badgeIcon: "fas fa-mobile-alt",
@@ -43,65 +44,7 @@ const myApps = [
         ],
         delay: 150
     },
-    {
-        title: "TrackFina – Admin App",
-        cardTitle: "TrackFina – Admin",
-        imageAlt: "TrackFina Admin",
-        subtitle: "Finance Tracking App",
-        projectSub: "React Native · Financial Tracking",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        description: "The administrative portal for TrackFina, providing an overview of financial tracking data, user management, and analytics.",
-        images: [
-            "assets/MobileApp/t1.jpeg",
-            "assets/MobileApp/t2.jpeg",
-            "assets/MobileApp/t3.jpeg",
-            "assets/MobileApp/t4.jpeg",
-            "assets/MobileApp/t5.jpeg",
-            "assets/MobileApp/t6.jpeg"
-        ],
-        delay: 200
-    },
-    {
-        title: "TrackFina – Agent App",
-        cardTitle: "TrackFina – Agent",
-        imageAlt: "TrackFina Agent",
-        subtitle: "Agent Portal App",
-        projectSub: "React Native · Agent Portal",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        description: "A mobile portal for TrackFina agents to manage daily logs, client data, and on-the-go financial updates.",
-        images: [
-            "assets/MobileApp/ta1.jpeg",
-            "assets/MobileApp/ta2.jpeg",
-            "assets/MobileApp/ta3.jpeg",
-            "assets/MobileApp/ta4.jpeg"
-        ],
-        delay: 250
-    },
-    {
-        title: "Restaurant POS App",
-        cardTitle: "Restaurant POS App",
-        imageAlt: "Restaurant POS",
-        subtitle: "Food Ordering & Billing",
-        projectSub: "React Native · Food & Billing",
-        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
-        category: "mobile",
-        badge: "Mobile App",
-        badgeIcon: "fas fa-mobile-alt",
-        description: "A restaurant point-of-sale app for quick billing, menu navigation, table management, and receipt generation.",
-        images: [
-            "assets/MobileApp/pos1.jpeg",
-            "assets/MobileApp/p2.jpeg",
-            "assets/MobileApp/p3.jpeg",
-            "assets/MobileApp/p4.jpeg"
-        ],
-        delay: 300
-    },
+    
     {
         title: "Supermarket Shopping App",
         cardTitle: "Supermarket & Grocery App",
@@ -120,6 +63,26 @@ const myApps = [
             "assets/MobileApp/s4.jpeg"
         ],
         delay: 250
+    },
+    {
+        title: "Supermarket Billing App",
+        cardTitle: "Supermarket Billing App",
+        imageAlt: "Supermarket billing and inventory dashboard",
+        subtitle: "Inventory, Billing & Sales Management",
+        projectSub: "Mobile App · Supermarket Billing",
+        technology: "React Native",
+        category: "mobile",
+        badge: "Mobile App",
+        badgeIcon: "fas fa-mobile-alt",
+        description: "A supermarket management app for tracking inventory, managing bills, and monitoring sales and revenue.",
+        images: [
+            "assets/MobileApp/b1.jpeg",
+            "assets/MobileApp/b2.jpeg",
+            "assets/MobileApp/b3.jpeg",
+            "assets/MobileApp/b4.jpeg",
+            "assets/MobileApp/b5.jpeg"
+        ],
+        delay: 275
     },
     {
         title: "Gym & Fitness App",
@@ -167,7 +130,7 @@ const myApps = [
         delay: 350
     },
     {
-        title: "Veetu Rusi Food App",
+        title: "Veetu Rusi Food User App",
         cardTitle: "Veetu Rusi App",
         imageAlt: "Veetu Rusi food ordering website",
         subtitle: "Food Ordering & Delivery",
@@ -187,6 +150,26 @@ const myApps = [
         delay: 400
     },
     {
+        title: "Veetu Rusi Home Chef App",
+        cardTitle: "Veetu Rusi Home Chef",
+        imageAlt: "Veetu Rusi Home Chef dashboard",
+        subtitle: "Home Chef Orders & Kitchen Management",
+        projectSub: "Mobile App · Home Chef & Food",
+        technology: "React Native",
+        category: "mobile",
+        badge: "Mobile App",
+        badgeIcon: "fas fa-mobile-alt",
+        description: "A home chef app for managing food orders, sharing dishes, tracking earnings, and maintaining a kitchen menu.",
+        images: [
+            "assets/MobileApp/vh1.jpeg",
+            "assets/MobileApp/vh2.jpeg",
+            "assets/MobileApp/vh3.jpeg",
+            "assets/MobileApp/vh4.jpeg",
+            "assets/MobileApp/vh5.jpeg"
+        ],
+        delay: 425
+    },
+    {
         title: "Car Service Booking App",
         cardTitle: "Car Service Booking",
         imageAlt: "Car service booking and management system",
@@ -198,11 +181,72 @@ const myApps = [
         badgeIcon: "fas fa-mobile-alt",
         description: "A car service app concept for finding vehicle services, booking appointments, and managing service requests.",
         images: [
-            "assets/MobileApp/c1.jpeg",
             "assets/MobileApp/c2.jpeg",
+            "assets/MobileApp/c1.jpeg",
             "assets/MobileApp/c3.jpeg",
             "assets/MobileApp/c4.jpeg",
         ],
         delay: 450
-    }
+    },
+    {
+        title: "TrackFina – Admin App",
+        cardTitle: "TrackFina – Admin",
+        imageAlt: "TrackFina Admin",
+        subtitle: "Finance Tracking App",
+        projectSub: "React Native · Financial Tracking",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
+        category: "mobile",
+        badge: "Mobile App",
+        badgeIcon: "fas fa-mobile-alt",
+        description: "The administrative portal for TrackFina, providing an overview of financial tracking data, user management, and analytics.",
+        images: [
+            
+            "assets/MobileApp/t3.jpeg",
+            "assets/MobileApp/t4.jpeg",
+            "assets/MobileApp/t5.jpeg",
+            "assets/MobileApp/t6.jpeg",
+            "assets/MobileApp/t1.jpeg",
+            "assets/MobileApp/t2.jpeg",
+        ],
+        delay: 200
+    },
+    {
+        title: "TrackFina – Agent App",
+        cardTitle: "TrackFina – Agent",
+        imageAlt: "TrackFina Agent",
+        subtitle: "Agent Portal App",
+        projectSub: "React Native · Agent Portal",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
+        category: "mobile",
+        badge: "Mobile App",
+        badgeIcon: "fas fa-mobile-alt",
+        description: "A mobile portal for TrackFina agents to manage daily logs, client data, and on-the-go financial updates.",
+        images: [
+            
+            "assets/MobileApp/ta2.jpeg",
+            "assets/MobileApp/ta3.jpeg",
+            "assets/MobileApp/ta4.jpeg",
+            "assets/MobileApp/ta1.jpeg",
+        ],
+        delay: 250
+    },
+    {
+        title: "Restaurant POS App",
+        cardTitle: "Restaurant POS App",
+        imageAlt: "Restaurant POS",
+        subtitle: "Food Ordering & Billing",
+        projectSub: "React Native · Food & Billing",
+        technology: "React Native · JavaScript · Node.js · Express.js · MySQL",
+        category: "mobile",
+        badge: "Mobile App",
+        badgeIcon: "fas fa-mobile-alt",
+        description: "A restaurant point-of-sale app for quick billing, menu navigation, table management, and receipt generation.",
+        images: [
+            "assets/MobileApp/pos1.jpeg",
+            "assets/MobileApp/p2.jpeg",
+            "assets/MobileApp/p3.jpeg",
+            "assets/MobileApp/p4.jpeg"
+        ],
+        delay: 300
+    },
 ];
